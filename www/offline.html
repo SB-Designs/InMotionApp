@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Offline • InMotion</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000; /* always black */
+      color: #fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    body { display:flex; align-items:center; justify-content:center; }
+    .card { max-width:460px; padding:24px; border-radius:16px; background:#111; text-align:center; }
+    h1 { margin:0 0 8px; font-size:22px; }
+    p { margin:0 0 16px; opacity:.8; }
+    .status { margin-top: 12px; font-size: 14px; opacity: .7; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>No Internet Connection</h1>
+    <p>Please check your connection. Trying to reconnect…</p>
+    <div class="status" id="status">Waiting for network...</div>
+  </div>
+
+  <script>
+    const SITE_URL = "https://inmotion.sbdesigns.is-a.dev/";
+    const statusEl = document.getElementById("status");
+
+    function checkOnline() {
+      if (navigator.onLine) {
+        // Network is back → reload site
+        location.replace(SITE_URL);
+      } else {
+        statusEl.textContent = "Still offline. Retrying...";
+      }
+    }
+
+    // Check every 5 seconds
+    setInterval(checkOnline, 5000);
+
+    // Also respond to online event immediately
+    window.addEventListener("online", () => {
+      location.replace(SITE_URL);
+    });
+  </script>
+</body>
+</html>

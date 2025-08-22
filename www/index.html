@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>InMotion</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000; /* always black */
+      color: #fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    body { display:flex; align-items:center; justify-content:center; }
+    .wrap { text-align:center; }
+    .spinner { width:40px; height:40px; border:4px solid #333; border-top-color:#fff; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 12px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hint { opacity:.7; font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="spinner"></div>
+    <div>Loading InMotion…</div>
+    <div class="hint" id="status"></div>
+  </div>
+
+  <script src="cordova.js"></script>
+  <script src="js/boot.js"></script>
+</body>
+</html>

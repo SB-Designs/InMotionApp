@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.sbdesigns.inmotion" version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>InMotion</name>
+    <description>Travel and transport blog, reviews, news and more.</description>
+    <author email="hello@sbdesigns.is-a.dev" href="https://sbdesigns.is-a.dev">
+        SB Designs
+    </author>
+
+    <!-- Start on a local loader page -->
+    <content src="index.html" />
+
+    <!-- Allow your remote site to load inside the WebView -->
+    <allow-navigation href="https://inmotion.sbdesigns.is-a.dev/*" />
+
+    <!-- Keep your intents (optional) -->
+    <allow-intent href="https://*/*" />
+    <allow-intent href="http://*/*" />
+
+    <!-- Global Preferences (unchanged) -->
+    <preference name="SplashMaintainAspectRatio" value="true"/>
+    <preference name="AutoHideSplashScreen" value="true"/>
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value="500"/>
+    <preference name="SplashScreenDelay" value="3000"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="Orientation" value="portrait"/>
+    <preference name="GradlePluginGoogleServicesVersion" value="4.4.1" />
+
+    <platform name="android">
+        <!-- Adaptive icons (unchanged) -->
+        <icon foreground="resources/android/icon-foreground.png" background="resources/android/icon-background.png" density="mdpi"/>
+        <icon foreground="resources/android/icon-foreground.png" background="resources/android/icon-background.png" density="hdpi"/>
+        <icon foreground="resources/android/icon-foreground.png" background="resources/android/icon-background.png" density="xhdpi"/>
+        <icon foreground="resources/android/icon-foreground.png" background="resources/android/icon-background.png" density="xxhdpi"/>
+        <icon foreground="resources/android/icon-foreground.png" background="resources/android/icon-background.png" density="xxxhdpi"/>
+
+        <!-- Splash (unchanged) -->
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/splash.png"/>
+        <preference name="AndroidWindowSplashScreenBackground" value="#000000"/>
+        <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#000000"/>
+    </platform>
+
+    <!-- Plugins -->
+    <plugin name="cordova-plugin-whitelist" spec="latest" />
+    <plugin name="cordova-plugin-splashscreen" spec="latest" />
+</widget>
